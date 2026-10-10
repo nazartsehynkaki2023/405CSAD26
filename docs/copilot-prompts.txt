@@ -111,6 +111,27 @@
 * f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (134 lines)
 </tagged_files>
 
+<current_datetime>2026-10-10T17:04:58.434+03:00</current_datetime>
+
+Опублікуй локальний проєкт lab1-cpp у новому репозиторії [https://github.com/nazartsehynkaki2023/lab1-ai-agent.git](https://github.com/nazartsehynkaki2023/lab1-ai-agent.git).
+
+1. Перевір поточну папку, git status, локальні гілки й remotes. Робоче дерево має бути чистим.
+2. Перевір через git ls-remote, що віддалений репозиторій порожній. Якщо там уже є гілки або теги, зупинися й покажи їх. Не перезаписуй віддалену історію.
+3. Підключи origin до вказаної адреси. Якщо origin уже існує, перевір його адресу; при невідповідності зупинися.
+4. Перейди на feature/develop/5-actions. Додай цей запит дослівно до docs/copilot-prompts.txt та запиши в docs/ai-log.md підготовку до публікації. Не записуй майбутній push чи запуск Actions як успішний.
+5. Закоміть лише ці журнали з повідомленням "Document GitHub publication step".
+6. Перейди на develop і виконай git merge --ff-only feature/develop/5-actions.
+7. Опублікуй з upstream гілки master, develop і всі п’ять наявних feature/develop/1-project, 2-cmake, 3-tests, 4-ci-scripts, 5-actions. Використовуй звичайний push, без force.
+8. Покажи результат push, git status і посилання на вкладку Actions. Якщо доступ до GitHub потребує входу, повідом про це; не запитуй токен у чаті.
+9. Якщо доступний GitHub CLI, покажи статус запущених workflow. Не заявляй успіх трьох ОС, поки запуски не завершилися.
+Не виконуй merge у master, не створюй фінальний PR і не видаляй гілки. При помилці зупинися та наведи її.
+
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (134 lines)
+</tagged_files>
+
 <current_datetime>2026-10-10T16:52:54.700+03:00</current_datetime>
 
 Виконай етап 5 лабораторної №1 у проєкті lab1-cpp на гілці feature/develop/5-actions.
