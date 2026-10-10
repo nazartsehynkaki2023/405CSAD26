@@ -150,6 +150,20 @@
   `38058770191` та run `38061041960`. Історичні записи журналу не
   переписувалися.
 
+## Фінальний review лабораторної
+
+- Перевірено чистоту `develop`; локальний commit і `origin/develop`
+  збігалися: `2d1d4bbfaf2c2c29e4aa16bf0c0352eaf09a97d1`.
+- Run `38061473086` (`Cross-platform build and test`) завершився
+  успішно на Ubuntu, Windows і macOS; усі job матриці завершилися успішно.
+- Run `38061473094` (`Check Repos`) завершився успішно; job `run-check`
+  завершився успішно.
+- `output/groups_405.csv` містить рядок
+  `nazartsehynkaki2023,405CSAD26,OK`.
+- Перевірено GitHub: відкритого або закритого PR із `develop` у `master`
+  перед створенням фінального PR не існувало.
+- Створено гілку `feature/develop/8-final-review` від `develop`.
+
 ## Завершення етапу 5
 
 - Workflow `.github/workflows/ci_build.yml` підготовлено та переглянуто.

@@ -337,3 +337,31 @@ Workflow може сам додати commit із output/. Поки не інт�
 8. Виконай звичайний push feature/develop/7-repo-check і develop, без force.
 9. Покажи git status, коротку історію та посилання на нові запуски Actions, якщо вони з’явилися. Не оголошуй їх успішними до завершення.
 Не змінюй master, не створюй фінальний PR і не видаляй гілки. Не змінюй checker.py, C++-код або workflow.
+
+<current_datetime>2026-10-10T17:59:19.618+03:00</current_datetime>
+
+Підготуй фінальний pull request лабораторної №1 у nazartsehynkaki2023/405CSAD26.
+
+1. Перевір чистоту робочого дерева, відповідність develop і origin/develop та успішні результати:
+
+- Cross-platform build and test: run 38061473086;
+- Check Repos: run 38061473094;
+- output/groups_405.csv містить OK для нашого репозиторію.
+2. Перевір, чи вже існує PR із develop у master. Якщо існує, використай його замість дублювання.
+3. Для запису цього запиту створи від develop гілку feature/develop/8-final-review. Додай запит дослівно до docs/copilot-prompts.txt та фактичні результати перевірки до docs/ai-log.md.
+4. Закоміть лише журнали, інтегруй гілку в develop через merge --ff-only і виконай звичайний push обох гілок. При розбіжностях зупинися; без force.
+5. Через GitHub CLI створи draft PR:
+
+- title: lab1/finish;
+- base: master;
+- head: develop.
+6. Опис українською має містити:
+
+- C++ Hello World, CMake, Google Test/CTest і скрипти без параметрів;
+- підтверджені результати трьох ОС і посилання на перевірений запуск;
+- перевірку завантаженого Windows-артефакту;
+- посилання на output/ у develop;
+- посилання на docs/copilot-prompts.txt;
+- зазначення, що скріншоти запитів і звіт ще будуть додані.
+7. Покажи URL PR і статус його перевірок. Нові запуски не оголошуй успішними до завершення.
+Reviewer поки не додавай — його GitHub-нік уточнюється. Не виконуй merge у master, не видаляй гілки й не змінюй код або workflow.
