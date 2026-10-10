@@ -42,6 +42,34 @@
 
 
 
+<current_datetime>2026-10-10T16:13:05.055+03:00</current_datetime>
+
+Заверши етап 2 лабораторної №1.
+
+1. Перевір поточну гілку feature/develop/2-cmake та наявні зміни.
+2. У README.md виправ ПІБ на «Цегинька Назар Олегович», відповідно до даних студента.
+3. У розділі складання Windows поясни, що наведені команди потребують доступного CMake. Зазнач фактичний шлях до встановленого cmake.exe: D:\VS\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe. Не змінюй системний PATH.
+4. Додай цей запит дослівно до docs/copilot-prompts.txt і фактичні виправлення до docs/ai-log.md.
+5. Перевір git diff --check, переглянь зміни та переконайся, що результати build/ не потрапляють у commit.
+6. Закоміть CMakeLists.txt, README.md і журнали з повідомленням "Add CMake build configuration".
+7. Перейди на develop та виконай git merge --ff-only feature/develop/2-cmake. При помилці зупинися й повідом її.
+8. Від оновленої develop створи feature/develop/3-tests і залиш її поточною.
+9. Покажи git status і коротку історію з позначеннями гілок.
+Не створюй тести цим запитом. Не виконуй push, не підключай remote, не видаляй гілки й не переписуй історію.
+
 <tagged_files>
 * f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (20 lines)
 </tagged_files>
+
+<current_datetime>2026-10-10T15:58:28.393+03:00</current_datetime>
+
+Виконай етап 2 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір поточну гілку feature/develop/2-cmake і прочитай main.cpp, README.md та .gitignore.
+2. Створи в корені CMakeLists.txt: мінімальна версія CMake 3.20, проєкт мовою C++, стандарт C++17 обов’язковий, розширення компілятора вимкнені, executable target hello з main.cpp. Конфігурація має працювати на Windows, Linux і macOS без жорстко заданих локальних шляхів.
+3. Для локальної перевірки знайди CMake зі встановленої Visual Studio у D:\VS. Використай окремий каталог build/cmake, щоб не змішувати результати з попередньою ручною компіляцією.
+4. Виконай конфігурацію з генератором "Visual Studio 17 2022" для x64, складання Release і запуск отриманого hello.exe. Покажи команди, вивід та коди завершення. Якщо виникла помилка — зупинися й наведи її.
+5. Доповни README.md командами конфігурації та складання: окремо для Windows і Linux/macOS. Зазнач, що Linux/macOS поки не перевірені.
+6. Додай цей запит дослівно до docs/copilot-prompts.txt, а фактичні зміни й результати — до docs/ai-log.md.
+7. Перевір git diff --check і покажи git status та вміст CMakeLists.txt.
+Не встановлюй інструментів і не змінюй системний PATH. Поки не створюй тести, CI-скрипти чи GitHub Actions. Не виконуй commit, merge або push.
