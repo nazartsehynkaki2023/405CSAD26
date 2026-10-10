@@ -44,6 +44,36 @@ cmake --build build/cmake --config Release
 
 Linux/macOS поки не перевірені.
 
+## Перевірка репозиторію за етапом 7
+
+`checker.py` — оригінальний скрипт перевірки з репозиторію
+`andrii-s-spitzer-lpnu-ua/csad-task1`, отриманий без змін із commit
+`a72224655d271d5ca17a0736a59aa1d01bc92177`. Він читає CSV-файли з `input/`,
+перевіряє доступність репозиторіїв GitHub через `requests` і записує результати
+до відповідних файлів у `output/`, додаючи колонку `Status`.
+
+У цьому проєкті підготовлено `input/groups_405.csv` з форматом:
+
+`Git Name,405`
+
+`nazartsehynkaki2023,405CSAD26`
+
+Це окремий один рядок на основі наданих студентом даних, а не офіційний повний
+експорт Google-таблиці. Очікуваний результат перевірки має бути
+`output/groups_405.csv` із доданою колонкою `Status`. Файл output ще не
+створювався, оскільки checker.py на цьому етапі не запускався.
+
+Workflow `.github/workflows/check.yml` зберігає запуск при зміні `input/**` і
+через `workflow_dispatch`, встановлює `requests`, запускає `checker.py` та
+зберігає змінений `output/` у тій самій гілці. Порожній commit не створюється.
+Порівняно з оригіналом використано `actions/checkout@v4` замість `@v3` і
+`actions/setup-python@v5` замість `@v4` як актуальні версії actions. Також
+використано локальну конфігурацію Git замість `--global`, явний
+`python -m pip` і перевірку staged diff перед commit. Push виконується
+звичайним способом без force.
+
+Перевірка checker.py і запуск GitHub Actions ще не виконувалися.
+
 ## GitHub Actions
 
 Workflow `.github/workflows/ci_build.yml` виконує один job `cross_build` на матриці

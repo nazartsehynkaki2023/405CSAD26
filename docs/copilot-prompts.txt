@@ -277,6 +277,25 @@
 * f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (44 lines)
 </tagged_files>
 
+<current_datetime>2026-10-10T17:43:13.265+03:00</current_datetime>
+
+Підготуй етап 7 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір чистоту робочого дерева та відповідність develop і origin/develop. Створи від develop гілку feature/develop/7-repo-check.
+2. Отримай оригінальні checker.py і .github/workflows/check.yml з репозиторію andrii-s-spitzer-lpnu-ua/csad-task1, commit a72224655d271d5ca17a0736a59aa1d01bc92177. Не змінюй origin нашого проєкту.
+3. Додай checker.py без змін. Прочитай його повністю перед підготовкою запуску.
+4. Створи input/groups_405.csv з двома колонками:
+Git Name,405
+nazartsehynkaki2023,405CSAD26
+Це один рядок із наданих студентом даних таблиці. Не додавай персональних даних інших студентів.
+5. Додай окремий workflow .github/workflows/check.yml на основі оригіналу. Збережи запуск при зміні input/** і workflow_dispatch. Забезпеч запуск checker.py, встановлення requests, права contents: write та збереження output/ у тій самій гілці. За відсутності змін output/ не створюй порожнього commit. Не використовуй force push. Якщо потрібно адаптувати застарілі actions, поясни кожну зміну.
+6. Не змінюй .github/workflows/ci_build.yml або C++-код.
+7. Онови README: поясни призначення перевірки, походження скрипта й точний commit, формат CSV та результат output/groups_405.csv. Зазнач, що наш CSV є окремим рядком на основі даних студента, а не офіційним повним експортом Google-таблиці.
+8. Додай цей запит дослівно до docs/copilot-prompts.txt. У docs/ai-log.md зафіксуй перейменування репозиторію й підготовлені файли. Не записуй перевірку як виконану.
+9. Перевір git diff --check та покажи git status, CSV і workflow звичайним текстом.
+Поки не запускай checker.py або Actions, не встановлюй локальні залежності й не виконуй commit, merge чи push. Не змінюй Google-таблицю або її Apps Script.
+
+
 <current_datetime>2026-10-10T15:58:28.393+03:00</current_datetime>
 
 Виконай етап 2 лабораторної №1 у проєкті lab1-cpp.
@@ -289,3 +308,17 @@
 6. Додай цей запит дослівно до docs/copilot-prompts.txt, а фактичні зміни й результати — до docs/ai-log.md.
 7. Перевір git diff --check і покажи git status та вміст CMakeLists.txt.
 Не встановлюй інструментів і не змінюй системний PATH. Поки не створюй тести, CI-скрипти чи GitHub Actions. Не виконуй commit, merge або push.
+
+<current_datetime>2026-10-10T17:46:50.050+03:00</current_datetime>
+
+Опублікуй і перевір етап 7 у репозиторії nazartsehynkaki2023/405CSAD26.
+
+1. Перевір поточну гілку feature/develop/7-repo-check і збережи наявні зміни.
+2. Додай цей запит дослівно до docs/copilot-prompts.txt. У docs/ai-log.md також зафіксуй підтверджені попередні результати: run 38058770191 успішний на трьох ОС, на кожній пройшло 3/3 тести; користувач завантажив Windows-артефакт, отримав Hello World! і код 0.
+3. Додай до staging лише checker.py, .github/workflows/check.yml, input/groups_405.csv, README.md і журнали. Переглянь staged diff та перевір відсутність build/.
+4. Перевір whitespace. Якщо попередження стосуються незміненого оригінального checker.py викладача, покажи їх, але збережи його точну копію.
+5. Створи commit "Add instructor repository checker" і виконай звичайний push з upstream тільки гілки feature/develop/7-repo-check.
+6. Через GitHub CLI знайди запуск Check Repos для цього push. Перевір його завершення та покажи посилання й фактичні логи.
+7. Прочитай віддалений output/groups_405.csv саме з feature/develop/7-repo-check. Покажи повний вміст і перевір, що для nazartsehynkaki2023/405CSAD26 записано OK. Не вважай зелений workflow достатнім доказом.
+8. Якщо output відсутній або статус інший, покажи причину й не записуй успіх.
+Workflow може сам додати commit із output/. Поки не інтегруй гілку в develop, не виконуй повторний push після автоматичного commit і не використовуй force. Не змінюй master, Google-таблицю чи Apps Script. Якщо виникне помилка — зупинися й повідом її.
