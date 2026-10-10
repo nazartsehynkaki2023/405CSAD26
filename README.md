@@ -44,6 +44,33 @@ cmake --build build/cmake --config Release
 
 Linux/macOS поки не перевірені.
 
+## GitHub Actions
+
+Workflow `.github/workflows/ci_build.yml` виконує один job `cross_build` на матриці
+`ubuntu-latest`, `windows-latest` і `macos-latest`. Для Linux/macOS запускається
+`ci.sh` через `bash`, а для Windows — `ci.bat` через `cmd`. Workflow не дублює
+кроки configure, build або CTest, оскільки вони вже реалізовані в цих скриптах.
+
+Запуск відбувається автоматично для `push` і `pull_request` до гілок, назви яких
+містять `develop` або `master`, зокрема для `feature/develop/...`. Також доступний
+ручний запуск через `workflow_dispatch`. Матриця має `fail-fast: false`, тому
+результати різних платформ переглядаються незалежно.
+
+Після успішної перевірки workflow публікує результат складання як артефакт:
+`hello-ubuntu-latest.tar.gz`, `hello-macos-latest.tar.gz` або
+`hello-windows-latest.zip`. Архіви містять лише executable `hello`, а не весь
+каталог `build/` чи залежності Google Test. Для Linux/macOS формат `tar.gz`
+зберігає право виконання.
+
+Логи переглядаються на сторінці запуску workflow у вкладці відповідного job і
+кроку. Артефакти завантажуються там само в секції Artifacts після успішного
+завершення job. Пункт Deploy у межах цієї лабораторної реалізовано як
+публікацію результатів складання, без розгортання застосунку.
+
+Workflow ще не запускався на GitHub, тому результати трьох ОС у цьому репозиторії
+ще не підтверджені фактичним виконанням Actions. Linux/macOS також залишаються
+неперевіреними локально.
+
 ## Автоматизована локальна перевірка
 
 Скрипти запускаються без параметрів і визначають корінь проєкту від власного розташування,

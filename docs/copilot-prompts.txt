@@ -93,6 +93,56 @@
 * f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (107 lines)
 </tagged_files>
 
+<current_datetime>2026-10-10T16:56:18.994+03:00</current_datetime>
+
+Заверши етап 5 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір поточну гілку feature/develop/5-actions і git status.
+2. Додай цей запит дослівно до docs/copilot-prompts.txt. У docs/ai-log.md зазнач, що workflow підготовлено й переглянуто, але запуск на GitHub ще не виконано.
+3. Виконай git diff --check. Додай до staging лише .github/workflows/ci_build.yml, README.md і журнали. Переглянь staged diff; файлів build/ там не має бути.
+4. Створи commit "Add GitHub Actions cross-platform workflow".
+5. Перейди на develop і виконай git merge --ff-only feature/develop/5-actions. При помилці зупинися й повідом її.
+6. Залиш поточною develop. Покажи git status і коротку історію звичайним текстом.
+Не підключай remote, не виконуй push і не змінюй master. Не видаляй гілки та не переписуй історію.
+
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (134 lines)
+</tagged_files>
+
+<current_datetime>2026-10-10T16:52:54.700+03:00</current_datetime>
+
+Виконай етап 5 лабораторної №1 у проєкті lab1-cpp на гілці feature/develop/5-actions.
+
+1. Перевір гілку, git status, CMakeLists.txt, ci.sh і ci.bat.
+2. Створи .github/workflows/ci_build.yml:
+
+- запуск при push і pull_request для гілок, назви яких містять develop або master; охопи також feature/develop/…;
+- додай workflow_dispatch для ручного запуску;
+- одна job cross_build;
+- матриця ubuntu-latest, windows-latest, macos-latest;
+- fail-fast: false;
+- permissions: contents: read.
+3. Використай actions/checkout@v4 відповідно до методички.
+4. Для Linux/macOS запускай ci.sh через bash, для Windows — ci.bat через cmd. Не дублюй configure/build/CTest у workflow: вони вже реалізовані у скриптах. Помилка скрипту має спричиняти failure job.
+5. Після успішного складання підготуй артефакт для кожної ОС:
+
+- Windows: ZIP з hello.exe;
+- Linux/macOS: tar.gz з hello, щоб зберегти право виконання.
+Визначай фактичне розташування executable після складання. Якщо його немає, завершуй крок помилкою.
+6. Публікуй архіви через actions/upload-artifact@v7. Назви артефактів мають містити ОС і бути різними для трьох варіантів матриці. Встанови if-no-files-found: error. Не завантажуй весь каталог build/ або залежності Google Test.
+7. У README поясни три платформи, тригери, перегляд логів і завантаження артефактів. Зазнач, що workflow ще не запускався на GitHub. Пункт Deploy реалізовано як публікацію результатів складання.
+8. Додай цей запит дослівно до docs/copilot-prompts.txt, а фактичні зміни — до docs/ai-log.md.
+9. Перевір YAML доступними засобами, фільтри гілок, умови вибору ОС та шляхи артефактів. Виконай git diff --check. Покажи workflow і результати перевірок звичайним текстом.
+Не встановлюй інструментів, не підключай remote і не виконуй commit, merge або push. Не записуй успіх трьох ОС до фактичного запуску Actions.
+
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (107 lines)
+</tagged_files>
+
 <current_datetime>2026-10-10T16:32:20.688+03:00</current_datetime>
 
 Виконай етап 4 лабораторної №1 у проєкті lab1-cpp на гілці feature/develop/4-ci-scripts.

@@ -1,0 +1,85 @@
+name: Cross-platform build and test
+
+on:
+  push:
+    branches:
+      - '**develop**'
+      - '**master**'
+  pull_request:
+    branches:
+      - '**develop**'
+      - '**master**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cross_build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Build and test on Linux/macOS
+        if: runner.os != 'Windows'
+        shell: bash
+        run: bash ./ci.sh
+
+      - name: Build and test on Windows
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: ci.bat
+
+      - name: Package executable on Linux/macOS
+        if: runner.os != 'Windows'
+        shell: bash
+        env:
+          ARTIFACT_ARCHIVE: ${{ runner.temp }}/hello-${{ matrix.os }}.tar.gz
+        run: |
+          set -Eeuo pipefail
+          executable="$GITHUB_WORKSPACE/build/ci/hello"
+          if [[ ! -x "$executable" ]]; then
+            executable="$GITHUB_WORKSPACE/build/ci/Release/hello"
+          fi
+          if [[ ! -x "$executable" ]]; then
+            echo "Error: hello executable was not found after the build." >&2
+            exit 1
+          fi
+          tar -czf "$ARTIFACT_ARCHIVE" -C "$(dirname "$executable")" "$(basename "$executable")"
+          test -f "$ARTIFACT_ARCHIVE"
+
+      - name: Package executable on Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          ARTIFACT_ARCHIVE: ${{ runner.temp }}/hello-windows-latest.zip
+        run: |
+          $candidates = @(
+            (Join-Path $env:GITHUB_WORKSPACE 'build\ci\Release\hello.exe'),
+            (Join-Path $env:GITHUB_WORKSPACE 'build\ci\hello.exe')
+          )
+          $executable = $candidates | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
+          if (-not $executable) {
+            throw 'Error: hello.exe was not found after the build.'
+          }
+          Compress-Archive -LiteralPath $executable -DestinationPath $env:ARTIFACT_ARCHIVE -Force
+          if (-not (Test-Path -LiteralPath $env:ARTIFACT_ARCHIVE)) {
+            throw 'Error: the Windows artifact was not created.'
+          }
+
+      - name: Upload executable artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: hello-${{ matrix.os }}
+          path: ${{ runner.temp }}/hello-${{ matrix.os }}.*
+          if-no-files-found: error

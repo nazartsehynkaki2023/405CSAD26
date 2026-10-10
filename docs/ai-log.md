@@ -104,6 +104,34 @@
 - Код завершення програми: `0`.
 - Linux/macOS не перевірялися.
 
+## Завершення етапу 5
+
+- Workflow `.github/workflows/ci_build.yml` підготовлено та переглянуто.
+- Перевірено його тригери, матрицю платформ, умови запуску скриптів і шляхи
+  пакування артефактів.
+- Запуск workflow на GitHub ще не виконано.
+
+## Етап 5: GitHub Actions
+
+- На гілці `feature/develop/5-actions` створено `.github/workflows/ci_build.yml`.
+- Workflow містить одну job `cross_build` із матрицею `ubuntu-latest`,
+  `windows-latest` і `macos-latest`, `fail-fast: false` та
+  `permissions: contents: read`.
+- Додано тригери `push`, `pull_request` для гілок із `develop` або `master` у
+  назві, а також `workflow_dispatch`.
+- Використано `actions/checkout@v4`.
+- Linux/macOS запускають `bash ./ci.sh`, Windows запускає `ci.bat` через `cmd`;
+  configure, build і CTest не дублюються у workflow.
+- Додано перевірку фактичного розташування executable після складання.
+  Windows пакує `hello.exe` у ZIP, Linux/macOS пакують `hello` у `tar.gz` зі
+  збереженням права виконання.
+- Артефакти публікуються через `actions/upload-artifact@v7` з унікальними
+  назвами ОС та `if-no-files-found: error`; каталог `build/` і залежності Google
+  Test не завантажуються.
+- README доповнено описом платформ, тригерів, перегляду логів, артефактів і
+  того, що Deploy реалізовано як публікацію результатів складання.
+- Workflow ще не запускався на GitHub; успіх трьох ОС не заявляється.
+
 ## Завершення етапу 4
 
 - Користувач вручну перевірив `ci.bat` у cmd.
