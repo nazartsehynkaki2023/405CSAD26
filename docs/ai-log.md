@@ -9,6 +9,53 @@
 - CMake-конфігурація та попередній запуск залишилися без змін: configure, build і запуск завершилися з кодом `0`, вивід — `Hello World!`.
 - Результати `build/` не додаються до commit згідно з `.gitignore`.
 
+## Етап 3: Google Test
+
+- Після попереднього обірваного запиту перевірено стан репозиторію: нових файлів або змін після нього не було.
+- Поточною залишалася гілка `feature/develop/3-tests`; наявний `CMakeLists.txt` збережено та розширено.
+- Створено `math_operations.h` із include guard і декларацією `int add(int a, int b)`.
+- Створено `math_operations.cpp` з реалізацією додавання.
+- Створено `tests/unit_tests.cpp` з тестами додавання додатних чисел, нуля та від’ємних чисел.
+- CMake оновлено: додано бібліотеку `math_operations`, executable `unit_tests`, Google Test через FetchContent із релізом `v1.14.0`, налаштування `gtest_force_shared_crt`, `enable_testing()` і `gtest_discover_tests`.
+- README доповнено описом тестів, командами CTest і вимогою інтернету для першого завантаження Google Test; Linux/macOS залишено неперевіреними.
+- Перший запуск перевірки зупинився на команді `ctest`, оскільки `ctest` не був доступний у PATH; успіх на цьому етапі не записувався.
+
+Фактичні результати завершеної перевірки:
+
+- Використано CMake: `D:\VS\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe`.
+- Після першої невдалої спроби виклику `ctest` знайдено штатний `ctest.exe` поруч із CMake; системний `PATH` не змінювався.
+- Configure для `Visual Studio 17 2022` та `x64`: код `0`.
+- Release build: код `0`.
+- `ctest -N -C Release`: знайдено 3 тести, код `0`:
+  - `MathOperations.BasicAddition`
+  - `MathOperations.AdditionWithZero`
+  - `MathOperations.AdditionWithNegativeNumbers`
+- `ctest -C Release --output-on-failure`: 3 з 3 тестів пройшли, код `0`.
+- Запуск `build\cmake\Release\hello.exe`: вивід `Hello World!`, код `0`.
+- Додано `DOWNLOAD_EXTRACT_TIMESTAMP TRUE` до FetchContent для усунення попередження CMake.
+
+## Виправлення етапу 3
+
+- Мінімальну версію CMake у `CMakeLists.txt` змінено з `3.20` на `3.24`.
+- `DOWNLOAD_EXTRACT_TIMESTAMP TRUE` змінено на `DOWNLOAD_EXTRACT_TIMESTAMP FALSE`.
+- README доповнено вимогою CMake `3.24` або новішого.
+- Історичні записи про попередню версію CMake не переписувалися.
+
+Фактичні результати повторної перевірки:
+
+- Configure у `build/cmake` з генератором `Visual Studio 17 2022` для `x64`: код `0`.
+- Release build: код `0`.
+- `ctest -N -C Release`: знайдено 3 тести, код `0`.
+- `ctest -C Release --output-on-failure`: 3 з 3 тестів пройшли, код `0`.
+- Нових тестів або залежностей не додавалося.
+
+## Завершення етапу 3
+
+- Перевірено гілку `feature/develop/3-tests`, вимоги CMake 3.24 і `DOWNLOAD_EXTRACT_TIMESTAMP FALSE`.
+- Повторний `ctest -N -C Release` знайшов 3 тести та завершився з кодом `0`.
+- Повторний `ctest -C Release --output-on-failure` підтвердив: 3 з 3 тестів пройшли, 0 помилок, код завершення `0`.
+- У commit будуть додані лише файли етапу 3 та документація; результати `build/` ігноруються Git.
+
 ## Початок роботи
 
 Роботу розпочато в папці `lab1-cpp`. Поточний вміст папки перевірено до внесення змін; папка була порожньою, а локальний Git-репозиторій був відсутній.

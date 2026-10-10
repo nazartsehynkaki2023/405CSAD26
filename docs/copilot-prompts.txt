@@ -57,8 +57,96 @@
 9. Покажи git status і коротку історію з позначеннями гілок.
 Не створюй тести цим запитом. Не виконуй push, не підключай remote, не видаляй гілки й не переписуй історію.
 
+<current_datetime>2026-10-10T16:28:50.888+03:00</current_datetime>
+
+Заверши етап 3 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір поточну гілку feature/develop/3-tests і git status.
+2. Перевір, що CMakeLists.txt вимагає CMake 3.24 і містить DOWNLOAD_EXTRACT_TIMESTAMP FALSE.
+3. Перевір останній фактичний результат CTest: усі три тести мають пройти. Якщо результат не підтверджується або є помилка, зупинися й повідом її.
+4. Додай цей запит дослівно до docs/copilot-prompts.txt та фактичний підсумок етапу до docs/ai-log.md.
+5. Виконай git diff --check. Додай до commit лише CMakeLists.txt, math_operations.h, math_operations.cpp, tests/unit_tests.cpp, README.md і журнали. Переглянь staged diff; файлів build/ там не має бути.
+6. Створи commit "Add Google Test unit tests".
+7. Перейди на develop і виконай git merge --ff-only feature/develop/3-tests. При помилці зупинися.
+8. Від оновленої develop створи feature/develop/4-ci-scripts і залиш її поточною.
+9. Покажи git status і коротку історію. Результати виводь звичайним текстом, без Markdown-таблиць і блоків коду, бо вони губляться під час копіювання.
+Поки не створюй CI-скрипти чи workflow. Не підключай remote, не виконуй push, не видаляй гілки й не переписуй історію.
+
+Це кінець повного запиту.
+
+
 <tagged_files>
 * f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (20 lines)
+</tagged_files>
+
+<current_datetime>2026-10-10T16:24:49.078+03:00</current_datetime>
+
+Виконай невелике виправлення етапу 3 на гілці feature/develop/3-tests.
+
+1. Прочитай CMakeLists.txt і збережи наявні зміни.
+2. Зміни мінімальну версію CMake з 3.20 на 3.24, оскільки DOWNLOAD_EXTRACT_TIMESTAMP додано у версії 3.24.
+3. Заміни DOWNLOAD_EXTRACT_TIMESTAMP TRUE на FALSE, відповідно до рекомендації CMake щодо коректного повторного складання після зміни архіву.
+4. У README.md зазнач вимогу CMake 3.24 або новішого. Історичні записи про попередню версію в журналі не переписуй.
+5. Повтори configure, build Release та CTest для build/cmake через встановлені cmake.exe і ctest.exe. Покажи підсумок тестів і коди завершення.
+6. Додай цей запит дослівно до docs/copilot-prompts.txt, а виправлення і фактичні результати — до docs/ai-log.md.
+7. Виконай git diff --check і покажи git status.
+Не додавай нових тестів чи залежностей. Не виконуй commit, merge або push.
+
+Це кінець повного запиту.
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (69 lines)
+</tagged_files>
+
+Позначка: попередній запит був обірваний і не завершився виконанням.
+
+Доступний обірваний запит (незавершений):
+
+<current_datetime>2026-10-10T16:15:46.885+03:00</current_datetime>
+
+Виконай етап 3 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір, що поточна гілка — feature/develop/3-tests. Прочитай CMakeLists.txt і збережи наявні зміни.
+2. Створи в корені math_operations.h з декларацією int add(int a, int b) та захистом від повторного включення. У math_operations.cpp реалізуй додавання.
+3. Створи tests/unit_tests.cpp з Google Test. Тест MathOperations.BasicAddition має перевіряти додавання двох додатних чисел. Додай окремі тести для нуля та від’ємних чисел.
+4. Онови CMakeLists.txt:
+
+- збережи executable hello;
+- створи бібліотеку math_operations і підключи її до тестового executable;
+- підключи Google Test через FetchContent із зафіксованим офіційним релізом, сумісним із C++17 і мінімальною версією CMake;
+- врахуй сумісність MSVC runtime на Windows;
+- увімкни тестування й зареєструй тести через gtest_discover_tests.
+5. Через встановлений CMake виконай configure у build/cmake для Visual Studio 17 2022 x64, build Release, ctest -N -C Release та ctest -C Release --output-on-failure. Для CTest використовуй каталог build/cmake.
+6. Покажи знайдені тести, фактичні результати та коди завершення. Перевір також запуск hello.exe. Якщо отримання Google Test або інший крок завершиться помилкою, повідом її й не записуй успіх.
+7. Онови README: оп
+
+<current_datetime>2026-10-10T16:16:48.953+03:00</current_datetime>
+
+Виконай етап 3 лабораторної №1 у проєкті lab1-cpp. Попередній запит обірвався: спочатку перевір, чи були після нього створені файли або внесені зміни. Прочитай їх і не дублюй виконане.
+
+1. Перевір поточну гілку feature/develop/3-tests. Прочитай CMakeLists.txt і збережи наявні зміни.
+2. Створи в корені math_operations.h з декларацією int add(int a, int b) та захистом від повторного включення. У math_operations.cpp реалізуй додавання.
+3. Створи tests/unit_tests.cpp з Google Test. Тест MathOperations.BasicAddition має перевіряти додавання двох додатних чисел. Додай окремі тести для нуля та від’ємних чисел.
+4. Онови CMakeLists.txt:
+
+- збережи executable hello;
+- створи бібліотеку math_operations і підключи її до тестового executable;
+- підключи Google Test через FetchContent із зафіксованим офіційним релізом, сумісним із C++17 і мінімальною версією CMake;
+- врахуй сумісність MSVC runtime на Windows;
+- увімкни тестування й зареєструй тести через gtest_discover_tests.
+5. Через встановлений CMake виконай configure у build/cmake для Visual Studio 17 2022 x64, build Release, ctest -N -C Release та ctest -C Release --output-on-failure. Для CTest використовуй каталог build/cmake.
+6. Покажи знайдені тести, фактичні результати та коди завершення. Перевір також запуск hello.exe. При помилці повідом її й не записуй успіх.
+7. Онови README.md: опиши тести, команди запуску та потребу інтернету для першого завантаження Google Test. Linux/macOS залиш позначеними як неперевірені.
+8. Додай цей запит дослівно до docs/copilot-prompts.txt. Збережи доступний обірваний запит і познач його як незавершений. У docs/ai-log.md запиши фактичні зміни й результати.
+9. Виконай git diff --check. Покажи git status, фінальний CMakeLists.txt і tests/unit_tests.cpp.
+Не встановлюй системні інструменти й не змінюй PATH. Не створюй CI-скрипти чи workflow. Не виконуй commit, merge або push.
+
+Це кінець повного запиту.
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (44 lines)
 </tagged_files>
 
 <current_datetime>2026-10-10T15:58:28.393+03:00</current_datetime>
