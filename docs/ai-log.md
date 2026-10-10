@@ -138,6 +138,18 @@
 - Ці результати стосуються попереднього запуску; новий запуск `Check Repos`
   на цьому етапі ще не виконано.
 
+## Інтеграція етапу 7
+
+- Виконано `git fetch origin` і `git merge --ff-only
+  origin/feature/develop/7-repo-check`; автоматичний commit `c746130
+  Results Updated` підтягнуто fast-forward без reset, rebase або force.
+- Локальний `output/groups_405.csv` підтверджено як:
+  `Git Name,405,Status` і
+  `nazartsehynkaki2023,405CSAD26,OK`.
+- README оновлено для репозиторію `405CSAD26` і фактичних результатів run
+  `38058770191` та run `38061041960`. Історичні записи журналу не
+  переписувалися.
+
 ## Завершення етапу 5
 
 - Workflow `.github/workflows/ci_build.yml` підготовлено та переглянуто.

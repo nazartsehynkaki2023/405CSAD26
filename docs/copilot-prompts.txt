@@ -322,3 +322,18 @@ nazartsehynkaki2023,405CSAD26
 7. Прочитай віддалений output/groups_405.csv саме з feature/develop/7-repo-check. Покажи повний вміст і перевір, що для nazartsehynkaki2023/405CSAD26 записано OK. Не вважай зелений workflow достатнім доказом.
 8. Якщо output відсутній або статус інший, покажи причину й не записуй успіх.
 Workflow може сам додати commit із output/. Поки не інтегруй гілку в develop, не виконуй повторний push після автоматичного commit і не використовуй force. Не змінюй master, Google-таблицю чи Apps Script. Якщо виникне помилка — зупинися й повідом її.
+
+<current_datetime>2026-10-10T17:53:10.349+03:00</current_datetime>
+
+Заверши інтеграцію етапу 7 у репозиторії nazartsehynkaki2023/405CSAD26.
+
+1. Перевір поточну гілку feature/develop/7-repo-check і чистоту робочого дерева.
+2. Виконай git fetch origin, потім git merge --ff-only origin/feature/develop/7-repo-check. Це має підтягнути автоматичний commit Results Updated. При розбіжностях зупинися; не використовуй reset, rebase або force.
+3. Прочитай локальний output/groups_405.csv і підтвердь рядок nazartsehynkaki2023,405CSAD26,OK.
+4. Онови README: репозиторій тепер 405CSAD26; складання й 3/3 тести перевірені на Windows, Ubuntu та macOS у run 38058770191; Windows-артефакт завантажено й запущено користувачем; перевірка репозиторію дала OK у run 38061041960. Додай актуальні посилання на запуски та output/. Прибери застарілі твердження про неперевірені платформи з поточного опису, але не переписуй історичні записи журналів.
+5. Додай цей запит дослівно до docs/copilot-prompts.txt. У docs/ai-log.md запиши фактичний результат перевірки й отримання автоматичного commit.
+6. Виконай git diff --check. Закоміть лише README і журнали з повідомленням "Document verified laboratory results".
+7. Перейди на develop. Перевір відповідність origin/develop і виконай git merge --ff-only feature/develop/7-repo-check. При помилці зупинися.
+8. Виконай звичайний push feature/develop/7-repo-check і develop, без force.
+9. Покажи git status, коротку історію та посилання на нові запуски Actions, якщо вони з’явилися. Не оголошуй їх успішними до завершення.
+Не змінюй master, не створюй фінальний PR і не видаляй гілки. Не змінюй checker.py, C++-код або workflow.

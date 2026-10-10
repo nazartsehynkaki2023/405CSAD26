@@ -4,6 +4,9 @@
 
 Автоматизація кросплатформенного проєкту Hello World за допомогою Copilot, CMake та GitHub Actions.
 
+Репозиторій опубліковано як
+`https://github.com/nazartsehynkaki2023/405CSAD26`.
+
 ## Виконав
 
 - ПІБ: Цегинька Назар Олегович
@@ -42,7 +45,7 @@ cmake --build build/cmake --config Release
 ./build/cmake/hello
 ```
 
-Linux/macOS поки не перевірені.
+Команди складання перевірено у GitHub Actions на Ubuntu та macOS.
 
 ## Перевірка репозиторію за етапом 7
 
@@ -59,9 +62,8 @@ Linux/macOS поки не перевірені.
 `nazartsehynkaki2023,405CSAD26`
 
 Це окремий один рядок на основі наданих студентом даних, а не офіційний повний
-експорт Google-таблиці. Очікуваний результат перевірки має бути
-`output/groups_405.csv` із доданою колонкою `Status`. Файл output ще не
-створювався, оскільки checker.py на цьому етапі не запускався.
+експорт Google-таблиці. Фактичний результат перевірки збережено у
+`output/groups_405.csv` із доданою колонкою `Status`.
 
 Workflow `.github/workflows/check.yml` зберігає запуск при зміні `input/**` і
 через `workflow_dispatch`, встановлює `requests`, запускає `checker.py` та
@@ -72,7 +74,9 @@ Workflow `.github/workflows/check.yml` зберігає запуск при зм
 `python -m pip` і перевірку staged diff перед commit. Push виконується
 звичайним способом без force.
 
-Перевірка checker.py і запуск GitHub Actions ще не виконувалися.
+У run [38061041960](https://github.com/nazartsehynkaki2023/405CSAD26/actions/runs/38061041960)
+перевірка завершилася успішно; для
+`nazartsehynkaki2023/405CSAD26` отримано статус `OK`.
 
 ## GitHub Actions
 
@@ -97,9 +101,12 @@ Workflow `.github/workflows/ci_build.yml` виконує один job `cross_bui
 завершення job. Пункт Deploy у межах цієї лабораторної реалізовано як
 публікацію результатів складання, без розгортання застосунку.
 
-Workflow ще не запускався на GitHub, тому результати трьох ОС у цьому репозиторії
-ще не підтверджені фактичним виконанням Actions. Linux/macOS також залишаються
-неперевіреними локально.
+Фактичний run
+[38058770191](https://github.com/nazartsehynkaki2023/405CSAD26/actions/runs/38058770191)
+успішно виконав складання і 3/3 тести на Ubuntu, Windows та macOS. Користувач
+завантажив Windows-артефакт, запустив його, отримав `Hello World!` і код
+завершення `0`. Цей результат підтверджує виконання у GitHub Actions; окрема
+локальна перевірка Linux/macOS не заявляється.
 
 ## Автоматизована локальна перевірка
 
@@ -135,7 +142,8 @@ Workflow ще не запускався на GitHub, тому результат
 
 `chmod +x ci.sh`
 
-Linux/macOS поки не перевірені.
+Скрипт `ci.sh` у цьому середовищі локально не запускався; Linux/macOS
+підтверджено фактичним виконанням GitHub Actions.
 
 ## Тести
 
@@ -160,4 +168,6 @@ ctest --test-dir build/cmake -N -C Release
 ctest --test-dir build/cmake -C Release --output-on-failure
 ```
 
-Linux/macOS поки не перевірені.
+Тести на Linux/macOS підтверджено run
+[38058770191](https://github.com/nazartsehynkaki2023/405CSAD26/actions/runs/38058770191):
+на кожній платформі пройшли 3/3 тести.
