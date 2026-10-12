@@ -1,5 +1,70 @@
 # Журнал роботи з AI
 
+## Фінальна перевірка Python-версії та публікація
+
+- Початкові SHA-256 source, tests, requirements, scripts і workflow знято
+  до повторення сценарію.
+- Повторно перевірено передумови, поточну гілку
+  `feature/develop/python-project`, усі пов’язані prompts і skills.
+- Правильні файли повторно використано без перезаписування.
+- `ci.sh` нормалізовано до LF; BOM відсутній. Перевірка після нормалізації:
+  `CRLF=False`, `LF=True`.
+- Фактичний `cmd /c ci.bat` завершився кодом `0`: `4 passed in 0.05s`,
+  виведено `Hello World!`.
+- Повторні SHA-256 для всіх перелічених source, tests, requirements,
+  `ci.bat`, `ci.sh` і workflow збігаються з початковими після фактичного
+  запуску check.
+- Попереднє порівняння хешів без фактичного виконання між вимірюваннями
+  позначено недостатнім доказом; поточне порівняння виконано після реального
+  `ci.bat`.
+- Commit, push, PR і merge ще не виконувалися на момент цього запису.
+
+## Завершальне виправлення та повторний сценарій `/init`
+
+- Перевірено поточну гілку `feature/develop/python-project`; нову гілку не
+  створювали. `.github/copilot-instructions.md` збережено без змін.
+- У `ci.bat` замінено небезпечне `exit /b %errorlevel%` всередині блоку
+  створення `.venv` на гарантований `exit /b 1`.
+- `ci.bat` тепер перевіряє наявний `.venv` через його Python 3.13 перед
+  встановленням залежностей; справне середовище не перебудовується.
+- Сценарій `init.prompt.md` повторно виконано логічно на поточній
+  feature-гілці: правильні source, tests, requirements, scripts і workflow
+  перевірено та використано без перезаписування. Linux/macOS локально не
+  оголошуються перевіреними.
+- Фактичний `cmd /c ci.bat`: чотири тести пройшли, надруковано
+  `Hello World!`, код завершення `0`.
+- `git diff --check` завершився кодом `0`; `.venv`, `__pycache__` і
+  `.pytest_cache` ігноруються Git.
+- Повторна перевірка сценарію `init.prompt.md` на цій самій гілці не
+  перезаписала правильні файли й не створила нову гілку. SHA-256 після
+  повторного проходу залишилися незмінними:
+  - `src/hello.py`: `E87C4D351B54596134C3900BBE3AC2F92DB1F492B20D4C2558B9CCC1BBD218D5`
+  - `src/math_operations.py`: `1F9519F37ABEF38AA7B744CACD5C63C5B059878C0DEACE8C3FF9DA57B5135FE5`
+  - `src/__init__.py`: `F365B0C3FC4E4ED86F413793CF3E85F054B59661ED998F9B8DE1D664AE53F6C4`
+  - `tests/conftest.py`: `91FB143C74209CA6874547A6FF857C5D28FB3C8CEEB96D2899283AE97D77CB6D`
+  - `tests/test_hello.py`: `15D91E803269717797C8EC09FB3CF797F47D72EE98A62411D49254B1B4B80624`
+  - `tests/test_math_operations.py`: `2C55BBEC9748DD9C69E0EC6F7146D8BE908207E91F504DFF6D02E7ADB8B5CEC5`
+  - `requirements-dev.txt`: `8231E50C1033ADF3C37E979667A8E459F59B888D4C7FAD97F5555E68CEBCE235`
+  - `ci.bat`: `DCF4494071CBE1A0F071BBC61355494F86933FCDEB042B17BDE32F1267896097`
+  - `ci.sh`: `64BC6F1DA7876F925E1E72229EB03A53285231218FF81072FEAD18942B2EB089`
+  - `.github/workflows/python-ci.yml`: `445D90D629D2292C705BA9CD5E91BA4811F850A9D25729602F9582638D6207DE`
+- Commit, push, PR і merge не виконувалися.
+
+## Виконання оркестратора `/init`: Python-проєкт
+
+- Перевірено Python 3.13.3, Git, remote `origin` і робоче дерево.
+- Незакомічений `.github/copilot-instructions.md` збережено без змін.
+- На `develop` створено гілку `feature/develop/python-project`; commit, push,
+  PR і merge не виконувалися.
+- Створено `src/hello.py`, `src/math_operations.py` і чотири pytest-тести.
+- Створено `requirements-dev.txt` з `pytest==8.3.5`, `ci.bat`, `ci.sh` і
+  локальне `.venv`; залежність встановлено лише до `.venv`.
+- Створено `.github/workflows/python-ci.yml` з однією матрицею
+  `ubuntu-latest`, `windows-latest`, `macos-latest`, Python 3.13 і
+  артефактом, що містить Python-проєкт та інструкції запуску.
+- Фактичний запуск `ci.bat` завершився кодом `0`: `4 passed`, після тестів
+  надруковано `Hello World!`.
+
 ## Завершення етапу 2
 
 - У `README.md` виправлено ПІБ на `Цегинька Назар Олегович`.
