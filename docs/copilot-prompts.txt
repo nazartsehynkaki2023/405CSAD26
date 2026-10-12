@@ -1,0 +1,379 @@
+<current_datetime>2026-10-10T15:44:20.901+03:00</current_datetime>
+
+Працюємо в новій папці lab1-cpp. Виконуємо лабораторну №1 «Автоматизація кросплатформенного проєкту Hello World за допомогою Copilot, CMake та GitHub Actions».
+
+Виконай лише початковий етап:
+
+1. Перевір поточну папку та її вміст. Якщо вона не порожня, спочатку повідом, що знайшов, і нічого не перезаписуй.
+2. Ініціалізуй локальний Git-репозиторій з початковою гілкою master. Створи develop, потім feature/develop/1-project і залиш її поточною. Якщо для створення гілок потрібен початковий commit, створи тільки README.md з даними нижче та зроби початковий commit у master. Не змінюй глобальні налаштування Git.
+3. README.md має містити тему лабораторної, ПІБ Цегинька Назар Олегович, групу КІ-405 і варіант 26. Опиши стек C++, CMake, Google Test, CTest та GitHub Actions як запланований.
+4. Створи .gitignore для build/, локальних файлів Visual Studio і кешів.
+5. Створи main.cpp з мінімальною програмою C++, яка виводить Hello World! і завершується успішно.
+6. Створи docs/copilot-prompts.txt і запиши цей запит дослівно. У docs/ai-log.md зафіксуй початок роботи в новій папці та реально виконані дії. Не стверджуй, що попередніх спроб не було.
+7. Покажи поточну гілку, git status і перелік створених файлів.
+Не створюй власного AI-агента, CMake, тести, CI-скрипти чи workflow. Нічого не встановлюй, не підключай remote і не виконуй push. Стару папку lab1-ai-agent не змінюй.
+
+<current_datetime>2026-10-10T15:46:48.874+03:00</current_datetime>
+
+Перевір мінімальну C++ програму в поточному проєкті lab1-cpp.
+
+1. Перевір поточну папку, гілку feature/develop/1-project і вміст main.cpp. Збережи наявні зміни.
+2. Знайди встановлену Visual Studio Community 2022 та її MSVC через vswhere. Активуй штатне x64 Developer-середовище лише для процесу перевірки, без зміни системного PATH.
+3. Створи build/ і скомпілюй main.cpp у build/hello.exe. Усі проміжні файли компіляції також розмісти в build/.
+4. Запусти hello.exe. Покажи команду складання, вивід програми та код завершення.
+5. Перевір, що build/ і його вміст ігноруються Git.
+6. Додай цей запит дослівно до docs/copilot-prompts.txt, а фактичний результат перевірки — до docs/ai-log.md.
+7. Покажи git status. Якщо виникла помилка, наведи її й не записуй успіх.
+Не встановлюй інструментів, не створюй CMake чи тести. Не виконуй commit, push, merge і не підключай remote.
+
+<current_datetime>2026-10-10T15:51:12.640+03:00</current_datetime>
+
+Заверши перший етап лабораторної в локальному репозиторії lab1-cpp.
+
+1. Перевір, що поточна гілка — feature/develop/1-project.
+2. Перевір main.cpp, .gitignore, README.md і журнали. Виконай git diff --check та переконайся, що build/ ігнорується.
+3. Додай цей запит дослівно до docs/copilot-prompts.txt. У docs/ai-log.md запиши підтверджений результат попереднього запуску: Hello World!, код завершення 0.
+4. Додай до commit лише .gitignore, main.cpp і документацію. Переглянь staged diff, переконайся, що там немає файлів build/.
+5. Створи commit із повідомленням "Add C++ Hello World and Copilot logs".
+6. Перейди на develop і інтегруй feature/develop/1-project через git merge --ff-only. Якщо виникне помилка, зупинися й повідом її.
+7. Від оновленої develop створи гілку feature/develop/2-cmake та залиш її поточною.
+8. Покажи git status і коротку історію з позначеннями гілок.
+Не видаляй гілки, не переписуй історію, не підключай remote і не виконуй push. Поки не створюй CMake чи тести. Якщо Git потребує user.name або user.email, повідом про це, не встановлюючи їх самостійно.
+
+
+
+<current_datetime>2026-10-10T16:13:05.055+03:00</current_datetime>
+
+Заверши етап 2 лабораторної №1.
+
+1. Перевір поточну гілку feature/develop/2-cmake та наявні зміни.
+2. У README.md виправ ПІБ на «Цегинька Назар Олегович», відповідно до даних студента.
+3. У розділі складання Windows поясни, що наведені команди потребують доступного CMake. Зазнач фактичний шлях до встановленого cmake.exe: D:\VS\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe. Не змінюй системний PATH.
+4. Додай цей запит дослівно до docs/copilot-prompts.txt і фактичні виправлення до docs/ai-log.md.
+5. Перевір git diff --check, переглянь зміни та переконайся, що результати build/ не потрапляють у commit.
+6. Закоміть CMakeLists.txt, README.md і журнали з повідомленням "Add CMake build configuration".
+7. Перейди на develop та виконай git merge --ff-only feature/develop/2-cmake. При помилці зупинися й повідом її.
+8. Від оновленої develop створи feature/develop/3-tests і залиш її поточною.
+9. Покажи git status і коротку історію з позначеннями гілок.
+Не створюй тести цим запитом. Не виконуй push, не підключай remote, не видаляй гілки й не переписуй історію.
+
+<current_datetime>2026-10-10T16:28:50.888+03:00</current_datetime>
+
+Заверши етап 3 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір поточну гілку feature/develop/3-tests і git status.
+2. Перевір, що CMakeLists.txt вимагає CMake 3.24 і містить DOWNLOAD_EXTRACT_TIMESTAMP FALSE.
+3. Перевір останній фактичний результат CTest: усі три тести мають пройти. Якщо результат не підтверджується або є помилка, зупинися й повідом її.
+4. Додай цей запит дослівно до docs/copilot-prompts.txt та фактичний підсумок етапу до docs/ai-log.md.
+5. Виконай git diff --check. Додай до commit лише CMakeLists.txt, math_operations.h, math_operations.cpp, tests/unit_tests.cpp, README.md і журнали. Переглянь staged diff; файлів build/ там не має бути.
+6. Створи commit "Add Google Test unit tests".
+7. Перейди на develop і виконай git merge --ff-only feature/develop/3-tests. При помилці зупинися.
+8. Від оновленої develop створи feature/develop/4-ci-scripts і залиш її поточною.
+9. Покажи git status і коротку історію. Результати виводь звичайним текстом, без Markdown-таблиць і блоків коду, бо вони губляться під час копіювання.
+Поки не створюй CI-скрипти чи workflow. Не підключай remote, не виконуй push, не видаляй гілки й не переписуй історію.
+
+Це кінець повного запиту.
+
+<current_datetime>2026-10-10T16:50:11.566+03:00</current_datetime>
+
+Заверши етап 4 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір поточну гілку feature/develop/4-ci-scripts і git status.
+2. Додай цей запит дослівно до docs/copilot-prompts.txt. У docs/ai-log.md зафіксуй ручну перевірку користувача в cmd: ci.bat виконав складання, усі 3 тести пройшли, програма вивела Hello World!, echo %ERRORLEVEL% показав 0.
+3. Виконай git diff --check. Додай до staging актуальні ci.sh, ci.bat, README.md і журнали. Переконайся, що staged-версія ci.sh містить останні виправлення, має LF і Git mode 100755. Файлів build/ у staging не має бути.
+4. Переглянь staged diff і створи commit "Add cross-platform build and test scripts".
+5. Перейди на develop і виконай git merge --ff-only feature/develop/4-ci-scripts. При помилці зупинися й повідом її.
+6. Від оновленої develop створи feature/develop/5-actions і залиш її поточною.
+7. Покажи git status і коротку історію звичайним текстом.
+Поки не створюй workflow, не підключай remote й не виконуй push. Не видаляй гілки та не переписуй історію.
+
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (107 lines)
+</tagged_files>
+
+<current_datetime>2026-10-10T16:56:18.994+03:00</current_datetime>
+
+Заверши етап 5 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір поточну гілку feature/develop/5-actions і git status.
+2. Додай цей запит дослівно до docs/copilot-prompts.txt. У docs/ai-log.md зазнач, що workflow підготовлено й переглянуто, але запуск на GitHub ще не виконано.
+3. Виконай git diff --check. Додай до staging лише .github/workflows/ci_build.yml, README.md і журнали. Переглянь staged diff; файлів build/ там не має бути.
+4. Створи commit "Add GitHub Actions cross-platform workflow".
+5. Перейди на develop і виконай git merge --ff-only feature/develop/5-actions. При помилці зупинися й повідом її.
+6. Залиш поточною develop. Покажи git status і коротку історію звичайним текстом.
+Не підключай remote, не виконуй push і не змінюй master. Не видаляй гілки та не переписуй історію.
+
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (134 lines)
+</tagged_files>
+
+<current_datetime>2026-10-10T17:04:58.434+03:00</current_datetime>
+
+Опублікуй локальний проєкт lab1-cpp у новому репозиторії [https://github.com/nazartsehynkaki2023/lab1-ai-agent.git](https://github.com/nazartsehynkaki2023/lab1-ai-agent.git).
+
+1. Перевір поточну папку, git status, локальні гілки й remotes. Робоче дерево має бути чистим.
+2. Перевір через git ls-remote, що віддалений репозиторій порожній. Якщо там уже є гілки або теги, зупинися й покажи їх. Не перезаписуй віддалену історію.
+3. Підключи origin до вказаної адреси. Якщо origin уже існує, перевір його адресу; при невідповідності зупинися.
+4. Перейди на feature/develop/5-actions. Додай цей запит дослівно до docs/copilot-prompts.txt та запиши в docs/ai-log.md підготовку до публікації. Не записуй майбутній push чи запуск Actions як успішний.
+5. Закоміть лише ці журнали з повідомленням "Document GitHub publication step".
+6. Перейди на develop і виконай git merge --ff-only feature/develop/5-actions.
+7. Опублікуй з upstream гілки master, develop і всі п’ять наявних feature/develop/1-project, 2-cmake, 3-tests, 4-ci-scripts, 5-actions. Використовуй звичайний push, без force.
+8. Покажи результат push, git status і посилання на вкладку Actions. Якщо доступ до GitHub потребує входу, повідом про це; не запитуй токен у чаті.
+9. Якщо доступний GitHub CLI, покажи статус запущених workflow. Не заявляй успіх трьох ОС, поки запуски не завершилися.
+Не виконуй merge у master, не створюй фінальний PR і не видаляй гілки. При помилці зупинися та наведи її.
+
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (134 lines)
+</tagged_files>
+
+<current_datetime>2026-10-10T16:52:54.700+03:00</current_datetime>
+
+Виконай етап 5 лабораторної №1 у проєкті lab1-cpp на гілці feature/develop/5-actions.
+
+1. Перевір гілку, git status, CMakeLists.txt, ci.sh і ci.bat.
+2. Створи .github/workflows/ci_build.yml:
+
+- запуск при push і pull_request для гілок, назви яких містять develop або master; охопи також feature/develop/…;
+- додай workflow_dispatch для ручного запуску;
+- одна job cross_build;
+- матриця ubuntu-latest, windows-latest, macos-latest;
+- fail-fast: false;
+- permissions: contents: read.
+3. Використай actions/checkout@v4 відповідно до методички.
+4. Для Linux/macOS запускай ci.sh через bash, для Windows — ci.bat через cmd. Не дублюй configure/build/CTest у workflow: вони вже реалізовані у скриптах. Помилка скрипту має спричиняти failure job.
+5. Після успішного складання підготуй артефакт для кожної ОС:
+
+- Windows: ZIP з hello.exe;
+- Linux/macOS: tar.gz з hello, щоб зберегти право виконання.
+Визначай фактичне розташування executable після складання. Якщо його немає, завершуй крок помилкою.
+6. Публікуй архіви через actions/upload-artifact@v7. Назви артефактів мають містити ОС і бути різними для трьох варіантів матриці. Встанови if-no-files-found: error. Не завантажуй весь каталог build/ або залежності Google Test.
+7. У README поясни три платформи, тригери, перегляд логів і завантаження артефактів. Зазнач, що workflow ще не запускався на GitHub. Пункт Deploy реалізовано як публікацію результатів складання.
+8. Додай цей запит дослівно до docs/copilot-prompts.txt, а фактичні зміни — до docs/ai-log.md.
+9. Перевір YAML доступними засобами, фільтри гілок, умови вибору ОС та шляхи артефактів. Виконай git diff --check. Покажи workflow і результати перевірок звичайним текстом.
+Не встановлюй інструментів, не підключай remote і не виконуй commit, merge або push. Не записуй успіх трьох ОС до фактичного запуску Actions.
+
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (107 lines)
+</tagged_files>
+
+<current_datetime>2026-10-10T16:32:20.688+03:00</current_datetime>
+
+Виконай етап 4 лабораторної №1 у проєкті lab1-cpp на гілці feature/develop/4-ci-scripts.
+
+1. Перевір гілку, git status, CMakeLists.txt і README.md. Збережи наявні зміни.
+2. Створи в корені ci.sh для Linux/macOS і ci.bat для Windows. Обидва запускаються без параметрів і визначають корінь проєкту від розташування самого скрипту. Врахуй пробіли й кирилицю в шляхах.
+3. Використай окремий каталог build/ci. Скрипти мають послідовно:
+
+- перевірити доступність потрібних інструментів;
+- виконати CMake configure;
+- зібрати конфігурацію Release;
+- виконати CTest з показом помилок;
+- запустити hello і показати його вивід.
+При будь-якій помилці скрипт повинен зупинитися з ненульовим кодом. Відсутність знайдених тестів також має бути помилкою.
+4. Для Windows забезпеч роботу зі встановленою Visual Studio: якщо інструменти недоступні, знайди інсталяцію через vswhere та підключи штатне x64 Developer-середовище й bundled CMake/CTest лише всередині скрипту. Не прописуй D:\VS як обов’язковий шлях. Не прив’язуй скрипт до конкретної версії генератора Visual Studio — він має підходити також для Windows у GitHub Actions.
+5. Врахуй різне розташування executable для single-config і multi-config генераторів. Не змішуй build/ci з попереднім build/cmake й не видаляй результати складання автоматично.
+6. Запусти ci.bat локально без параметрів. Покажи результат configure, build, кількість і результати тестів, вивід hello та код завершення. Повтори запуск з іншої поточної директорії через повний шлях до скрипту, щоб перевірити незалежність від неї.
+7. Для ci.sh використовуй LF і встанови executable bit у Git. Linux/macOS поки познач як неперевірені.
+8. Онови README інструкціями запуску обох скриптів і вимогами до інструментів.
+9. Додай цей запит дослівно до docs/copilot-prompts.txt, а фактичні результати — до docs/ai-log.md.
+10. Виконай git diff --check. Покажи git status, вміст обох скриптів і результати перевірок звичайним текстом без блоків коду.
+Не встановлюй інструментів, не змінюй системний PATH і не створюй workflow. Не виконуй commit, merge, push або підключення remote.
+
+<current_datetime>2026-10-10T16:41:44.892+03:00</current_datetime>
+
+Виправ два недоліки CI-скриптів на поточній гілці feature/develop/4-ci-scripts.
+
+1. У ci.sh додай до CMake configure параметр -DCMAKE_BUILD_TYPE=Release, щоб single-config генератори справді збирали Release. Збережи --config Release для multi-config.
+2. У ci.bat перевір блок виклику VsDevCmd.bat. Усередині дужок %errorlevel% розгортається до виконання команд. Забезпеч зчитування фактичного коду завершення після call і повернення ненульового коду при помилці.
+3. Переглянь інші перевірки помилок у ci.bat на таку саму проблему й виправ лише аналогічні випадки.
+4. Повтори локальний запуск ci.bat без параметрів. Покажи результати складання, усіх трьох тестів, запуску hello та код завершення.
+5. Збережи LF і executable bit ci.sh. Linux/macOS поки не позначай як перевірені.
+6. Додай цей запит дослівно до docs/copilot-prompts.txt, а зміни й фактичні результати — до docs/ai-log.md. Збережи інформацію про попередні помилки та їх виправлення.
+7. Виконай git diff --check і покажи git status.
+Не виконуй commit, merge або push і не створюй workflow.
+
+Це кінець повного запиту.
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (20 lines)
+</tagged_files>
+
+<current_datetime>2026-10-10T16:24:49.078+03:00</current_datetime>
+
+Виконай невелике виправлення етапу 3 на гілці feature/develop/3-tests.
+
+1. Прочитай CMakeLists.txt і збережи наявні зміни.
+2. Зміни мінімальну версію CMake з 3.20 на 3.24, оскільки DOWNLOAD_EXTRACT_TIMESTAMP додано у версії 3.24.
+3. Заміни DOWNLOAD_EXTRACT_TIMESTAMP TRUE на FALSE, відповідно до рекомендації CMake щодо коректного повторного складання після зміни архіву.
+4. У README.md зазнач вимогу CMake 3.24 або новішого. Історичні записи про попередню версію в журналі не переписуй.
+5. Повтори configure, build Release та CTest для build/cmake через встановлені cmake.exe і ctest.exe. Покажи підсумок тестів і коди завершення.
+6. Додай цей запит дослівно до docs/copilot-prompts.txt, а виправлення і фактичні результати — до docs/ai-log.md.
+7. Виконай git diff --check і покажи git status.
+Не додавай нових тестів чи залежностей. Не виконуй commit, merge або push.
+
+Це кінець повного запиту.
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (69 lines)
+</tagged_files>
+
+Позначка: попередній запит був обірваний і не завершився виконанням.
+
+Доступний обірваний запит (незавершений):
+
+<current_datetime>2026-10-10T16:15:46.885+03:00</current_datetime>
+
+Виконай етап 3 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір, що поточна гілка — feature/develop/3-tests. Прочитай CMakeLists.txt і збережи наявні зміни.
+2. Створи в корені math_operations.h з декларацією int add(int a, int b) та захистом від повторного включення. У math_operations.cpp реалізуй додавання.
+3. Створи tests/unit_tests.cpp з Google Test. Тест MathOperations.BasicAddition має перевіряти додавання двох додатних чисел. Додай окремі тести для нуля та від’ємних чисел.
+4. Онови CMakeLists.txt:
+
+- збережи executable hello;
+- створи бібліотеку math_operations і підключи її до тестового executable;
+- підключи Google Test через FetchContent із зафіксованим офіційним релізом, сумісним із C++17 і мінімальною версією CMake;
+- врахуй сумісність MSVC runtime на Windows;
+- увімкни тестування й зареєструй тести через gtest_discover_tests.
+5. Через встановлений CMake виконай configure у build/cmake для Visual Studio 17 2022 x64, build Release, ctest -N -C Release та ctest -C Release --output-on-failure. Для CTest використовуй каталог build/cmake.
+6. Покажи знайдені тести, фактичні результати та коди завершення. Перевір також запуск hello.exe. Якщо отримання Google Test або інший крок завершиться помилкою, повідом її й не записуй успіх.
+7. Онови README: оп
+
+<current_datetime>2026-10-10T16:16:48.953+03:00</current_datetime>
+
+Виконай етап 3 лабораторної №1 у проєкті lab1-cpp. Попередній запит обірвався: спочатку перевір, чи були після нього створені файли або внесені зміни. Прочитай їх і не дублюй виконане.
+
+1. Перевір поточну гілку feature/develop/3-tests. Прочитай CMakeLists.txt і збережи наявні зміни.
+2. Створи в корені math_operations.h з декларацією int add(int a, int b) та захистом від повторного включення. У math_operations.cpp реалізуй додавання.
+3. Створи tests/unit_tests.cpp з Google Test. Тест MathOperations.BasicAddition має перевіряти додавання двох додатних чисел. Додай окремі тести для нуля та від’ємних чисел.
+4. Онови CMakeLists.txt:
+
+- збережи executable hello;
+- створи бібліотеку math_operations і підключи її до тестового executable;
+- підключи Google Test через FetchContent із зафіксованим офіційним релізом, сумісним із C++17 і мінімальною версією CMake;
+- врахуй сумісність MSVC runtime на Windows;
+- увімкни тестування й зареєструй тести через gtest_discover_tests.
+5. Через встановлений CMake виконай configure у build/cmake для Visual Studio 17 2022 x64, build Release, ctest -N -C Release та ctest -C Release --output-on-failure. Для CTest використовуй каталог build/cmake.
+6. Покажи знайдені тести, фактичні результати та коди завершення. Перевір також запуск hello.exe. При помилці повідом її й не записуй успіх.
+7. Онови README.md: опиши тести, команди запуску та потребу інтернету для першого завантаження Google Test. Linux/macOS залиш позначеними як неперевірені.
+8. Додай цей запит дослівно до docs/copilot-prompts.txt. Збережи доступний обірваний запит і познач його як незавершений. У docs/ai-log.md запиши фактичні зміни й результати.
+9. Виконай git diff --check. Покажи git status, фінальний CMakeLists.txt і tests/unit_tests.cpp.
+Не встановлюй системні інструменти й не змінюй PATH. Не створюй CI-скрипти чи workflow. Не виконуй commit, merge або push.
+
+Це кінець повного запиту.
+
+
+<tagged_files>
+* f:\політех\4 курс\АПКС\Лаб1\lab1-cpp\README.md (44 lines)
+</tagged_files>
+
+<current_datetime>2026-10-10T17:43:13.265+03:00</current_datetime>
+
+Підготуй етап 7 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір чистоту робочого дерева та відповідність develop і origin/develop. Створи від develop гілку feature/develop/7-repo-check.
+2. Отримай оригінальні checker.py і .github/workflows/check.yml з репозиторію andrii-s-spitzer-lpnu-ua/csad-task1, commit a72224655d271d5ca17a0736a59aa1d01bc92177. Не змінюй origin нашого проєкту.
+3. Додай checker.py без змін. Прочитай його повністю перед підготовкою запуску.
+4. Створи input/groups_405.csv з двома колонками:
+Git Name,405
+nazartsehynkaki2023,405CSAD26
+Це один рядок із наданих студентом даних таблиці. Не додавай персональних даних інших студентів.
+5. Додай окремий workflow .github/workflows/check.yml на основі оригіналу. Збережи запуск при зміні input/** і workflow_dispatch. Забезпеч запуск checker.py, встановлення requests, права contents: write та збереження output/ у тій самій гілці. За відсутності змін output/ не створюй порожнього commit. Не використовуй force push. Якщо потрібно адаптувати застарілі actions, поясни кожну зміну.
+6. Не змінюй .github/workflows/ci_build.yml або C++-код.
+7. Онови README: поясни призначення перевірки, походження скрипта й точний commit, формат CSV та результат output/groups_405.csv. Зазнач, що наш CSV є окремим рядком на основі даних студента, а не офіційним повним експортом Google-таблиці.
+8. Додай цей запит дослівно до docs/copilot-prompts.txt. У docs/ai-log.md зафіксуй перейменування репозиторію й підготовлені файли. Не записуй перевірку як виконану.
+9. Перевір git diff --check та покажи git status, CSV і workflow звичайним текстом.
+Поки не запускай checker.py або Actions, не встановлюй локальні залежності й не виконуй commit, merge чи push. Не змінюй Google-таблицю або її Apps Script.
+
+
+<current_datetime>2026-10-10T15:58:28.393+03:00</current_datetime>
+
+Виконай етап 2 лабораторної №1 у проєкті lab1-cpp.
+
+1. Перевір поточну гілку feature/develop/2-cmake і прочитай main.cpp, README.md та .gitignore.
+2. Створи в корені CMakeLists.txt: мінімальна версія CMake 3.20, проєкт мовою C++, стандарт C++17 обов’язковий, розширення компілятора вимкнені, executable target hello з main.cpp. Конфігурація має працювати на Windows, Linux і macOS без жорстко заданих локальних шляхів.
+3. Для локальної перевірки знайди CMake зі встановленої Visual Studio у D:\VS. Використай окремий каталог build/cmake, щоб не змішувати результати з попередньою ручною компіляцією.
+4. Виконай конфігурацію з генератором "Visual Studio 17 2022" для x64, складання Release і запуск отриманого hello.exe. Покажи команди, вивід та коди завершення. Якщо виникла помилка — зупинися й наведи її.
+5. Доповни README.md командами конфігурації та складання: окремо для Windows і Linux/macOS. Зазнач, що Linux/macOS поки не перевірені.
+6. Додай цей запит дослівно до docs/copilot-prompts.txt, а фактичні зміни й результати — до docs/ai-log.md.
+7. Перевір git diff --check і покажи git status та вміст CMakeLists.txt.
+Не встановлюй інструментів і не змінюй системний PATH. Поки не створюй тести, CI-скрипти чи GitHub Actions. Не виконуй commit, merge або push.
+
+<current_datetime>2026-10-10T17:46:50.050+03:00</current_datetime>
+
+Опублікуй і перевір етап 7 у репозиторії nazartsehynkaki2023/405CSAD26.
+
+1. Перевір поточну гілку feature/develop/7-repo-check і збережи наявні зміни.
+2. Додай цей запит дослівно до docs/copilot-prompts.txt. У docs/ai-log.md також зафіксуй підтверджені попередні результати: run 38058770191 успішний на трьох ОС, на кожній пройшло 3/3 тести; користувач завантажив Windows-артефакт, отримав Hello World! і код 0.
+3. Додай до staging лише checker.py, .github/workflows/check.yml, input/groups_405.csv, README.md і журнали. Переглянь staged diff та перевір відсутність build/.
+4. Перевір whitespace. Якщо попередження стосуються незміненого оригінального checker.py викладача, покажи їх, але збережи його точну копію.
+5. Створи commit "Add instructor repository checker" і виконай звичайний push з upstream тільки гілки feature/develop/7-repo-check.
+6. Через GitHub CLI знайди запуск Check Repos для цього push. Перевір його завершення та покажи посилання й фактичні логи.
+7. Прочитай віддалений output/groups_405.csv саме з feature/develop/7-repo-check. Покажи повний вміст і перевір, що для nazartsehynkaki2023/405CSAD26 записано OK. Не вважай зелений workflow достатнім доказом.
+8. Якщо output відсутній або статус інший, покажи причину й не записуй успіх.
+Workflow може сам додати commit із output/. Поки не інтегруй гілку в develop, не виконуй повторний push після автоматичного commit і не використовуй force. Не змінюй master, Google-таблицю чи Apps Script. Якщо виникне помилка — зупинися й повідом її.
+
+<current_datetime>2026-10-10T17:53:10.349+03:00</current_datetime>
+
+Заверши інтеграцію етапу 7 у репозиторії nazartsehynkaki2023/405CSAD26.
+
+1. Перевір поточну гілку feature/develop/7-repo-check і чистоту робочого дерева.
+2. Виконай git fetch origin, потім git merge --ff-only origin/feature/develop/7-repo-check. Це має підтягнути автоматичний commit Results Updated. При розбіжностях зупинися; не використовуй reset, rebase або force.
+3. Прочитай локальний output/groups_405.csv і підтвердь рядок nazartsehynkaki2023,405CSAD26,OK.
+4. Онови README: репозиторій тепер 405CSAD26; складання й 3/3 тести перевірені на Windows, Ubuntu та macOS у run 38058770191; Windows-артефакт завантажено й запущено користувачем; перевірка репозиторію дала OK у run 38061041960. Додай актуальні посилання на запуски та output/. Прибери застарілі твердження про неперевірені платформи з поточного опису, але не переписуй історичні записи журналів.
+5. Додай цей запит дослівно до docs/copilot-prompts.txt. У docs/ai-log.md запиши фактичний результат перевірки й отримання автоматичного commit.
+6. Виконай git diff --check. Закоміть лише README і журнали з повідомленням "Document verified laboratory results".
+7. Перейди на develop. Перевір відповідність origin/develop і виконай git merge --ff-only feature/develop/7-repo-check. При помилці зупинися.
+8. Виконай звичайний push feature/develop/7-repo-check і develop, без force.
+9. Покажи git status, коротку історію та посилання на нові запуски Actions, якщо вони з’явилися. Не оголошуй їх успішними до завершення.
+Не змінюй master, не створюй фінальний PR і не видаляй гілки. Не змінюй checker.py, C++-код або workflow.
+
+<current_datetime>2026-10-10T17:59:19.618+03:00</current_datetime>
+
+Підготуй фінальний pull request лабораторної №1 у nazartsehynkaki2023/405CSAD26.
+
+1. Перевір чистоту робочого дерева, відповідність develop і origin/develop та успішні результати:
+
+- Cross-platform build and test: run 38061473086;
+- Check Repos: run 38061473094;
+- output/groups_405.csv містить OK для нашого репозиторію.
+2. Перевір, чи вже існує PR із develop у master. Якщо існує, використай його замість дублювання.
+3. Для запису цього запиту створи від develop гілку feature/develop/8-final-review. Додай запит дослівно до docs/copilot-prompts.txt та фактичні результати перевірки до docs/ai-log.md.
+4. Закоміть лише журнали, інтегруй гілку в develop через merge --ff-only і виконай звичайний push обох гілок. При розбіжностях зупинися; без force.
+5. Через GitHub CLI створи draft PR:
+
+- title: lab1/finish;
+- base: master;
+- head: develop.
+6. Опис українською має містити:
+
+- C++ Hello World, CMake, Google Test/CTest і скрипти без параметрів;
+- підтверджені результати трьох ОС і посилання на перевірений запуск;
+- перевірку завантаженого Windows-артефакту;
+- посилання на output/ у develop;
+- посилання на docs/copilot-prompts.txt;
+- зазначення, що скріншоти запитів і звіт ще будуть додані.
+7. Покажи URL PR і статус його перевірок. Нові запуски не оголошуй успішними до завершення.
+Reviewer поки не додавай — його GitHub-нік уточнюється. Не виконуй merge у master, не видаляй гілки й не змінюй код або workflow.
+Перехід на іншу методичку (2026-10-12)
+Запит: підготувати Build Engineer для Python 3.13, venv, pytest і GitHub Actions
+для варіанта 26 без запуску /init у цьому сеансі.
+Фактичний результат: створено агентський manifest, skills project-scaffold,
+build-and-test і github-actions, prompt-команди git-init/create-project/
+create-build/create-actions/check/init, а також docs/architecture.md і
+docs/usage.md. Старі записи не переписувалися; C++-файли очищено лише у межах
+відстежуваних файлів, push/PR/merge не виконувалися.
+Виправлення frontmatter prompt-команд (2026-10-12)
+У шести `.github/prompts/*.prompt.md` поле `name` узгоджено з іменем команди:
+git-init, create-project, create-build, create-actions, check, init.
+`agent: "Build Engineer"` та решту вмісту збережено. `/init` не запускався.
