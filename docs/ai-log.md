@@ -1,5 +1,20 @@
 # Журнал роботи з AI
 
+## Публікація Python-версії
+
+- Commit Python-проєкту: `58c8b24` (`Add Python project and CI workflow`).
+- Перевірений `origin`: `https://github.com/nazartsehynkaki2023/405CSAD26.git`.
+- `develop` і `feature/develop/python-project` опубліковано звичайним
+  push без force.
+- Створено draft PR
+  `https://github.com/nazartsehynkaki2023/405CSAD26/pull/2` з назвою
+  `lab1/finish`, head `feature/develop/python-project` і base `develop`.
+  PR №1 не змінювався, reviewer не додавався.
+- Python CI run `38292606742` завершився успішно на Ubuntu, Windows і macOS.
+  Усі три matrix jobs пройшли, per-OS artifacts завантажено.
+- Попередження GitHub про Node.js 20 і майбутню зміну `ubuntu-latest` не
+  вплинули на результат CI.
+
 ## Фінальна перевірка Python-версії та публікація
 
 - Початкові SHA-256 source, tests, requirements, scripts і workflow знято
