@@ -1,5 +1,32 @@
 # Журнал роботи з AI
 
+## Завершальна перевірка CI, артефакту та негативного сценарію
+
+- Для run `38292697463` прочитано job logs:
+  - Ubuntu: `collected 4 items`, `4 passed in 0.02s`, `Hello World!`;
+  - Windows: `collected 4 items`, `4 passed in 0.02s`, `Hello World!`;
+  - macOS: `collected 4 items`, `4 passed in 0.01s`, `Hello World!`.
+- Для кожної matrix job step `Upload project and run instructions`
+  завершився успішно.
+- Windows-артефакт `python-project-windows-latest` завантажено до
+  `build/artifact-verification`. Перевірено наявність source, tests,
+  `requirements-dev.txt`, `ci.bat`, `ci.sh`, README та usage docs.
+- Запуск `ci.bat` із завантаженого артефакту використав окремий
+  `build/artifact-verification/.venv`, встановив залежності лише туди,
+  дав `4 passed in 0.07s`, `Hello World!` і код `0`.
+- Створено окрему копію `src` і `tests` у `build/agent-check-demo`.
+  В оригіналі нічого не змінювалося. У копії очікування
+  `BasicAddition` навмисно змінено з `5` на `6`.
+- Негативна перевірка повернула код `1`: `test_basic_addition` впав на
+  `assert 5 == 6`; результат не оголошено успішним. За таким результатом
+  агент зупиняє сценарій і не виконує публікацію.
+- Контрольні SHA-256 вихідного проєкту залишилися без змін; `git diff
+  --check` і фінальний `git status` перевірено. Commit, push, PR і reviewer
+  у цій перевірці не виконувалися.
+- Примітка до контрольних хешів: поточний робочий `ci.sh` збігається з
+  `HEAD` за Git blob `2d6776c85a4127cfdab7dc0e2bd463d270fd09ee`; його
+  поточний SHA-256 — `D084E7E3983432E1EC74693E2BBD2E5B0D0668689E69307D20B784BA77A39FB1`.
+
 ## Публікація Python-версії
 
 - Commit Python-проєкту: `58c8b24` (`Add Python project and CI workflow`).
