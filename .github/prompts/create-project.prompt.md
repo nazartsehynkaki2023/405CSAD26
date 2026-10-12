@@ -1,5 +1,5 @@
 ---
-name: "Create Python project"
+name: create-project
 description: "Create the Hello World and arithmetic Python structure through project-scaffold."
 agent: "Build Engineer"
 argument-hint: "Create or verify src and pytest test layout"

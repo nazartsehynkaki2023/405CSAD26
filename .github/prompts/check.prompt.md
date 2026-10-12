@@ -1,5 +1,5 @@
 ---
-name: "Check project"
+name: check
 description: "Validate structure, scripts, tests, and workflow without editing generated source files."
 agent: "Build Engineer"
 argument-hint: "Run the complete non-destructive project check"

@@ -1,5 +1,5 @@
 ---
-name: "Create build and test"
+name: create-build
 description: "Prepare venv, pinned pytest dependencies, tests, and platform scripts."
 agent: "Build Engineer"
 argument-hint: "Prepare local repeatable build and test commands"

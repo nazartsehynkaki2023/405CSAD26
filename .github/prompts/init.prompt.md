@@ -1,5 +1,5 @@
 ---
-name: "Initialize Python project"
+name: init
 description: "Orchestrate Git preparation, project scaffold, build/test setup, Actions, and final check."
 agent: "Build Engineer"
 argument-hint: "Run the complete guarded initialization workflow"

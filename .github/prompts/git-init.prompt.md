@@ -1,5 +1,5 @@
 ---
-name: "Git initialization"
+name: git-init
 description: "Check Git state and prepare repository ignore rules for the Build Engineer workflow."
 agent: "Build Engineer"
 argument-hint: "Prepare Git safely without committing or pushing"

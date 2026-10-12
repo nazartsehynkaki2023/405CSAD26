@@ -1,5 +1,5 @@
 ---
-name: "Create GitHub Actions"
+name: create-actions
 description: "Create the cross-platform Python matrix workflow through github-actions."
 agent: "Build Engineer"
 argument-hint: "Create or verify the GitHub Actions workflow"

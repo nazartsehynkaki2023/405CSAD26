@@ -373,3 +373,7 @@ build-and-test і github-actions, prompt-команди git-init/create-project/
 create-build/create-actions/check/init, а також docs/architecture.md і
 docs/usage.md. Старі записи не переписувалися; C++-файли очищено лише у межах
 відстежуваних файлів, push/PR/merge не виконувалися.
+Виправлення frontmatter prompt-команд (2026-10-12)
+У шести `.github/prompts/*.prompt.md` поле `name` узгоджено з іменем команди:
+git-init, create-project, create-build, create-actions, check, init.
+`agent: "Build Engineer"` та решту вмісту збережено. `/init` не запускався.

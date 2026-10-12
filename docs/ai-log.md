@@ -253,3 +253,7 @@
   файли старого C++-проєкту, створено Build Engineer, три skills, шість prompt-команд
   і документацію для Python 3.13/venv/pytest. `/init` у цьому сеансі не запускався;
   Python-проєкт буде створено окремим запуском агента.
+- Виправлено frontmatter prompt-команд у `develop` (2026-10-12):
+  поля `name` приведено до імен файлів — `git-init`, `create-project`,
+  `create-build`, `create-actions`, `check`, `init`. Поле `agent: "Build Engineer"`
+  та інший вміст збережено. `/init`, push і зміни PR не виконувалися.
