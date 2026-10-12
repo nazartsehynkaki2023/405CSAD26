@@ -365,3 +365,11 @@ Workflow може сам додати commit із output/. Поки не інт�
 - зазначення, що скріншоти запитів і звіт ще будуть додані.
 7. Покажи URL PR і статус його перевірок. Нові запуски не оголошуй успішними до завершення.
 Reviewer поки не додавай — його GitHub-нік уточнюється. Не виконуй merge у master, не видаляй гілки й не змінюй код або workflow.
+Перехід на іншу методичку (2026-10-12)
+Запит: підготувати Build Engineer для Python 3.13, venv, pytest і GitHub Actions
+для варіанта 26 без запуску /init у цьому сеансі.
+Фактичний результат: створено агентський manifest, skills project-scaffold,
+build-and-test і github-actions, prompt-команди git-init/create-project/
+create-build/create-actions/check/init, а також docs/architecture.md і
+docs/usage.md. Старі записи не переписувалися; C++-файли очищено лише у межах
+відстежуваних файлів, push/PR/merge не виконувалися.
