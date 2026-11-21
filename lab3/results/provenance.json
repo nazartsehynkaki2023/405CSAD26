@@ -1,0 +1,18 @@
+{
+  "target_status": "iCE40 HX8K CT256; instructor approval not confirmed",
+  "screenshots": {
+    "01_write_A5.png": "ea0b62f76ea9952be9e245f1aa9ee94e7d02f24008184d8b49cab6898b84b270",
+    "02_read_3C.png": "d2bc718f365dc86764b91518eaeaab5ff713d911c0d64f1443ddde653b079ae9",
+    "03_address_NACK.png": "d67db84334b14be7070304bc4beab3626436085f29afdfd07ab5ee5663451c45",
+    "04_clock_stretching.png": "241e9bad31108eb79f1e315db41a92da82ac585f0259a015634ae13c49907b44",
+    "05_simulation_PASS.png": "188e972e48cd8aef26ac312284e50a3fdc7ecf1f7f1122b428dff953ca625a56",
+    "06_synthesis_resources.png": "2a1bba4bca6740f62af414357d8c8e4f5e8fdecb285bf411cc356d17b40f108a",
+    "07_timing_Fmax.png": "476090691dbcae8e98ad4651a1bbe6131e6a8c3ddd2269fa07c86fd21c6c1a57"
+  },
+  "source_logs": {
+    "simulation.log": "8dba5b5fa53776c742681f8312b137987609bea3567cecb4dc9595e404503b4b",
+    "synthesis.log": "fb50fbdd474871d725ba34f3f722132694f96edafe3b61eafc56df8a5a9db593",
+    "place_route.log": "a9985b3331c716b3c56ec6be86a25891d6c8b06f6ec1954b7cbd4fbd676a9e55",
+    "tool_status.log": "06904d9c6c36c10cacc52c6111d6959365f2a57606b263e9b4564e3dbe85fe7a"
+  }
+}

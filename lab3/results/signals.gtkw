@@ -1,0 +1,17 @@
+[*] GTKWave save file for the supplied simulation
+[dumpfile] "i2c.vcd"
+[timestart] 0
+@28
+tb_i2c.clk
+tb_i2c.rst
+tb_i2c.start
+tb_i2c.read_cmd
+tb_i2c.scl
+tb_i2c.sda
+tb_i2c.busy
+tb_i2c.done
+tb_i2c.nack_error
+@22
+tb_i2c.tx_data[7:0]
+tb_i2c.rx_data[7:0]
+tb_i2c.case_id[31:0]
