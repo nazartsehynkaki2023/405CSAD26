@@ -1,0 +1,7 @@
+results/*
+!results/simulation.log
+!results/synthesis.log
+!results/place_route.log
+!results/timing.json
+!results/tool_status.log
+!results/provenance.json
