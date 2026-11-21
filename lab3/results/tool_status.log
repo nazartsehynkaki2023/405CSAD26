@@ -1,0 +1,2 @@
+iverilog_exit=0
+vvp_exit=0; all_13_scenarios_passed=true

@@ -5,3 +5,4 @@ results/*
 !results/timing.json
 !results/tool_status.log
 !results/provenance.json
+!results/signals.gtkw

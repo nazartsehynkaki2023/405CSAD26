@@ -1,0 +1,16 @@
+VCD info: dumpfile results/i2c.vcd opened for output.
+PASS 1 rd=0 data=a5 ack_addr=1 ack_data=1 stretch=0 time_ps=203651000
+PASS 2 rd=0 data=00 ack_addr=1 ack_data=1 stretch=0 time_ps=416911000
+PASS 3 rd=0 data=ff ack_addr=1 ack_data=1 stretch=0 time_ps=630171000
+PASS 4 rd=0 data=5a ack_addr=1 ack_data=1 stretch=0 time_ps=843431000
+PASS 5 rd=1 data=3c ack_addr=1 ack_data=1 stretch=0 time_ps=1056691000
+PASS 6 rd=1 data=00 ack_addr=1 ack_data=1 stretch=0 time_ps=1269951000
+PASS 7 rd=1 data=ff ack_addr=1 ack_data=1 stretch=0 time_ps=1483211000
+PASS 8 rd=0 data=a5 ack_addr=0 ack_data=1 stretch=0 time_ps=1606111000
+PASS 9 rd=0 data=96 ack_addr=1 ack_data=0 stretch=0 time_ps=1819371000
+PASS 10 rd=1 data=c3 ack_addr=1 ack_data=1 stretch=1 time_ps=2044611000
+PASS 11 busy command ignored
+PASS 12 reset during frame
+PASS 13 rd=0 data=81 ack_addr=1 ack_data=1 stretch=0 time_ps=2491371000
+ALL PASS: 13 scenarios
+tb/tb_i2c.v:189: $finish called at 2501371000 (1ps)
